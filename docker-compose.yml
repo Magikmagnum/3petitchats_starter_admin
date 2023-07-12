@@ -5,7 +5,7 @@ services:
             build: apache
             container_name: www_3petitchats_admin
             ports:
-                  - "8642:80"
+                  - "8942:80"
             volumes:
                   - ./apache/vhosts:/etc/apache2/sites-enabled
                   - ./:/var/www
@@ -42,7 +42,7 @@ services:
             container_name: maildev_3petitchats_admin
             command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
             ports:
-                  - "8182:80"
+                  - "8982:80"
             restart: always
             networks:
                   - dev
@@ -53,7 +53,7 @@ services:
                   dockerfile: Dockerfile
             container_name: reactapp_3petitchats_admin
             ports:
-                  - "3100:3000"
+                  - "3900:3000"
             volumes:
                   - ./reactJs:/app
             environment:
